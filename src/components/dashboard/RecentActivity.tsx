@@ -43,7 +43,7 @@ const RecentActivity = () => {
   ];
 
   return (
-    <div className="bg-background rounded-xl border border-border">
+    <div className="bg-background/80 backdrop-blur-sm rounded-xl border border-border/20 shadow-sm">
       <div className="p-6 border-b border-border">
         <h2 className="text-xl font-bold text-foreground">Activité récente</h2>
       </div>
@@ -51,8 +51,8 @@ const RecentActivity = () => {
       <div className="p-6">
         <div className="space-y-4">
           {activities.map((activity) => (
-            <div key={activity.id} className="flex items-start space-x-4 p-4 rounded-lg hover:bg-muted/50 transition-colors duration-200">
-              <div className={`p-2 rounded-lg ${activity.color}`}>
+            <div key={activity.id} className="flex items-start space-x-4 p-4 rounded-xl hover:bg-muted/30 transition-all duration-300 hover:shadow-sm">
+              <div className={`p-2 rounded-xl ${activity.color} shadow-sm`}>
                 <activity.icon className="w-5 h-5" />
               </div>
               

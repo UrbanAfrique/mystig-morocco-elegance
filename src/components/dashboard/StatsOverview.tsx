@@ -41,10 +41,10 @@ const StatsOverview = () => {
       {stats.map((stat, index) => (
         <div
           key={index}
-          className="bg-background rounded-xl p-6 border border-border shadow-sm hover:shadow-md transition-shadow duration-300"
+          className="bg-background/80 backdrop-blur-sm rounded-xl p-6 border border-border/20 shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105"
         >
           <div className="flex items-center justify-between mb-4">
-            <div className={`p-3 rounded-lg bg-muted ${stat.color}`}>
+            <div className={`p-3 rounded-xl bg-gradient-to-br from-muted to-muted/50 ${stat.color} shadow-sm`}>
               <stat.icon className="w-6 h-6" />
             </div>
             <div className={`flex items-center space-x-1 text-sm ${

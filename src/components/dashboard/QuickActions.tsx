@@ -33,7 +33,7 @@ const QuickActions = () => {
   ];
 
   return (
-    <div className="bg-background rounded-xl border border-border">
+    <div className="bg-background/80 backdrop-blur-sm rounded-xl border border-border/20 shadow-sm">
       <div className="p-6 border-b border-border">
         <h2 className="text-xl font-bold text-foreground">Actions rapides</h2>
       </div>
@@ -44,10 +44,10 @@ const QuickActions = () => {
             <a
               key={index}
               href={action.href}
-              className="block p-4 rounded-lg border border-border hover:border-primary/50 hover:shadow-md transition-all duration-300 group"
+              className="block p-4 rounded-xl border border-border/20 hover:border-primary/50 hover:shadow-lg transition-all duration-300 group hover:scale-105"
             >
               <div className="flex items-center space-x-4">
-                <div className={`p-3 rounded-lg ${action.color} group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`p-3 rounded-xl ${action.color} group-hover:scale-110 transition-transform duration-300 shadow-sm`}>
                   <action.icon className="w-6 h-6" />
                 </div>
                 
