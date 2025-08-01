@@ -6,6 +6,7 @@ import GalleryCarousel from '@/components/GalleryCarousel';
 import ImageTextSection from '@/components/ImageTextSection';
 import ExperienceSection from '@/components/ExperienceSection';
 import DestinationsGrid from '@/components/DestinationsGrid';
+import ProductsSection from '@/components/ProductsSection';
 import ContactSection from '@/components/ContactSection';
 import Footer from '@/components/Footer';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
@@ -46,6 +47,7 @@ const Index = () => {
       <ImageTextSection />
       <ExperienceSection />
       <DestinationsGrid />
+      <ProductsSection />
       <ContactSection />
       <Footer />
     </div>

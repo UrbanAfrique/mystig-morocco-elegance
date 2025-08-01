@@ -25,7 +25,6 @@ const DashboardLayout = ({ children }: DashboardLayoutProps) => {
   const menuItems = [
     { icon: Home, label: 'Tableau de bord', href: '/dashboard', active: true },
     { icon: BarChart3, label: 'Statistiques', href: '/dashboard/statistics' },
-    { icon: Hotel, label: 'Hôtels', href: '/dashboard/hotels' },
     { icon: Calendar, label: 'Événements', href: '/dashboard/events' },
     { icon: Car, label: 'Transport', href: '/dashboard/transport' },
     { icon: Package, label: 'Forfaits', href: '/dashboard/packages' },
