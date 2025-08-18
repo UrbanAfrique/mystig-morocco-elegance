@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { Eye, EyeOff, LogIn, ArrowLeft } from 'lucide-react';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
+import { login } from '@/services/auth';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '@/contexts/AuthContext';
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -8,14 +11,21 @@ const Login = () => {
     email: '',
     password: ''
   });
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+  const { setUser } = useAuth();
 
   useScrollAnimation();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate login - in real app, this would validate credentials
-    if (formData.email && formData.password) {
-      window.location.href = '/dashboard';
+    setError('');
+    try {
+      const user = await login(formData.email, formData.password);
+      setUser(user);
+      navigate('/dashboard');
+    } catch {
+      setError('Email ou mot de passe invalide');
     }
   };
 
@@ -121,6 +131,8 @@ const Login = () => {
                 Se connecter
               </button>
             </form>
+
+            {error && <div className="mt-4 text-red-500 text-center">{error}</div>}
 
             <div className="mt-8 text-center">
               <p className="text-muted-foreground text-sm">
